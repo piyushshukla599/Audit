@@ -1,42 +1,56 @@
-# About Yuki
-My name is Yuki, and I am an independent blockchain security researcher.
+# About Piyush
+My name is Piyush shukla, and I am an independent blockchain security researcher.
 
-- Currently, I am actively engaged in audit contests on platforms such as sherlock, code4rena and trying my best to find every vulnerability possible. l am work-learning type of person, so my ideal goal is to participate in every contest l see. 
+- Currently, I am actively engaged in audit contests and bug bounty on platforms such as hackenproof,immunefi sherlock, code4rena and trying my best to find every vulnerability possible. l am work-learning type of person, so my ideal goal is to participate in every contest l see. 
 
-# Yuki's wall of achievements
+# Piyush's wall of achievements
 
 | Overall issues found | High risk | Unique highs | Medium risk | Unique mediums | Audited contests |
 |:--:|:--:|:--:|:--:|:--:|:--:|
 | 25 issues found | 17 highs | - | 8 mediums | - | 6 contests |
 
-# Yuki's monthly tracking 
+# Piyush's monthly tracking 
 ### 22 June, 2023 - 22 July, 2023 
 | Total issues | High risk | Medium risk | Audited contests | Security reports | Earned payouts |
 |:--:|:--:|:--:|:--:|:--:|:--:|
-| 25 issues found | 17 highs | 8 mediums | 6 contests | [Source](https://github.com/SilentYuki/Monthly-reports/tree/main/22%20June,%202023%20-%2022%20July,%202023) | - |
+|  issues found |  highs | 1  mediums |  contests | [Source]((https://github.com/code-423n4/2023-06-stader-findings/issues/15)) | - |
+
+
+### Bug bounties
+| Project | Severity | Security Report | Payout | Status |
+|:--:|:--:|:--:|:--:|:--:|
+| - | - | - | - | - |
+
+# Hackenproof <img src="https://hackenproof.com/assets/cup/logo-cup-372c14b88c255d9567c39787551f64265cc43c895699b542bb07ba73c8aa30dd.svg" width=100 height=25>
+
+### Bug bounties
+| Project | Severity | Leaderboard | Payout | Status |
+|:--:|:--:|:--:|:--:|:--:|
+| 66 | High | Top 3 | - | Fixed |
+
+
+# Immunefi <img src="https://immunefi.com/images/logo-white.svg" width=100 height=25>
+
+### Bug bounties
+| Project | Severity | Security Report | Payout | Status |
+|:--:|:--:|:--:|:--:|:--:|
+| - | - | - | - | - |
 
 # Sherlock <img src="https://audits.sherlock.xyz/_next/static/media/sherlock_logo.dc2b3290.svg" width=24 height=23.5>
 
 ### Audit Competitions
 | Contest | High risk | Medium risk | Security report | Leaderboard | Payout | Language |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| [Symmetrical](https://audits.sherlock.xyz/contests/85)| 4 highs | 3 mediums | [Source](https://github.com/SilentYuki/Portfolio/blob/main/Security%20Reports/sherlock/symmetrical.md) | - | - | Solidity |
-| [Unstoppable](https://audits.sherlock.xyz/contests/95) | 2 highs | 3 mediums | [Source](https://github.com/SilentYuki/Portfolio/blob/main/Security%20Reports/sherlock/unstoppable.md) | - | - | Vyper |
-| [Bond Options](https://audits.sherlock.xyz/contests/99) | 2 highs | 1 medium | [Source](https://github.com/SilentYuki/Portfolio/blob/main/Security%20Reports/sherlock/BondOptions.md) | - | - | Solidity |
-| [GLIF](https://audits.sherlock.xyz/contests/90) | 3 highs | 1 medium | Private | - | - | Solidity |
-| [Index Update](https://audits.sherlock.xyz/contests/91) | 1 high | 0 medium | [Source](https://github.com/SilentYuki/Portfolio/blob/main/Security%20Reports/sherlock/Index-update.md) | - | - | Solidity |
-| [TokenSoft](https://audits.sherlock.xyz/contests/100) | 5 highs | 0 medium | [Source](https://github.com/SilentYuki/Portfolio/blob/main/Security%20Reports/sherlock/TokenSoft.md) | - | - | Solidity |
-| [Perennial V2](https://audits.sherlock.xyz/contests/106) | - | - | - | - | - | Solidity |
-| [Tokemak](https://audits.sherlock.xyz/contests/101) | - | - | - | - | - | Solidity |
+| [Symmetrical](https://audits.sherlock.xyz/contests/)| 4 highs | 3 mediums | [Source](https://github.com/Portfolio/blob/main/Security%20Reports/sherlock/symmetrical.md) | - | - | Solidity |
+| [Unstoppable](https://audits.sherlock.xyz/contests/) | 2 highs | 3 mediums | [Source]
 
 # Code4rena <img src="https://code4rena.com/logos/c4-logo.svg" width=100 height=25>
 
 ### Audit Competitions
 | Contest | High risk | Medium risk | Security report | Leaderboard | Payout | Language |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| [Arcade](https://code4rena.com/contests/2023-07-arcadexyz#top) | - | - | - | - | - | Solidity |
-| [Amphora](https://code4rena.com/contests/2023-07-amphora-protocol#top) | - | - | - | - | - | Solidity |
-| [Moonwell](https://code4rena.com/contests/2023-07-moonwell#top) | - | - | - | - | - | Solidity |
+| [Stader](https://code4rena.com/contests/2023-06-stader-labs#top) | - | - | - | - | - | Solidity |
+|
 
 # CodeHawks <img src="https://res.cloudinary.com/droqoz7lg/image/upload/v1689080263/snhkgvtsidryjdtx0pce.png" width=50 height=27>
 
@@ -52,17 +66,4 @@ My name is Yuki, and I am an independent blockchain security researcher.
 ### Audit Competitions
 | Contest | High risk | Medium risk | Security report | Payout |
 |:--:|:--:|:--:|:--:|:--:|
-| [VMEX](https://app.hats.finance/audit-competitions/vmex-0xb6861bdeb368a1bf628fc36a36cec62d04fb6a77/rewards) | - | - | - | - |
-
-### Bug bounties
-| Project | Severity | Security Report | Payout | Status |
-|:--:|:--:|:--:|:--:|:--:|
-| - | - | - | - | - |
-
-
-# Immunefi <img src="https://immunefi.com/images/logo-white.svg" width=100 height=25>
-
-### Bug bounties
-| Project | Severity | Security Report | Payout | Status |
-|:--:|:--:|:--:|:--:|:--:|
-| - | - | - | - | - |
+| [VMEX](https://app.hats.finance/audit-competitions/) | - | - | - | - |
