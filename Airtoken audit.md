@@ -70,49 +70,30 @@ Smart contract lies in the fact that only the contract owner (the entity that de
 To mitigate this centralization issue, the contract could implement a multi-role approach. Instead of having only the contract owner perform minting and burning, the contract could define multiple roles with specific permissions. For example, separate roles for minting and burning could be created, and these roles could be assigned to different addresses. This way, the power to create and destroy tokens is distributed among different entities, reducing the risk of abuse by a single party.
 
 
-#### Add this code in you contract
-```
-mapping(address => bool) public minters;
-mapping(address => bool) public burners;
-```
-Modify the `initialize` function to assign roles
-
-```
-function initialize(string memory _name, string memory _symbol, address _treasuryContract, uint256 _maxTokenSupply) public initializer {
-    // ... (existing code)
-
-    // Assign minting and burning roles to the treasury contract
-    minters[_treasuryContract] = true;
-    burners[_treasuryContract] = true;
-}
+#### Add these modifier in code 
 ```
 
- Implement functions to manage roles:
-```
- `modifier onlyMinter() {
-    require(minters[msg.sender], "Not a minter");
+modifier onlyMinter() {
+    require(msg.sender == minter, "Not a minter");
     _;
 }
 
 modifier onlyBurner() {
-    require(burners[msg.sender], "Not a burner");
+    require(msg.sender == burner, "Not a burner");
     _;
 }
+```
+And update `mint and burn` function like this 
 
-function addMinter(address _minter) external onlyOwner {
-    minters[_minter] = true;
+```
+function mint(address _userAddress, uint256 _amount) public whenNotPaused `onlyMinter`  {
+    require(_userAddress != address(0), "Invalid user address");
+    require(totalSupply() + _amount <= maxTokenSupply, "Exceeds max supply");
+    _mint(_userAddress, _amount);
 }
 
-function addBurner(address _burner) external onlyOwner {
-    burners[_burner] = true;
-}
-
-function removeMinter(address _minter) external onlyOwner {
-    minters[_minter] = false;
-}
-
-function removeBurner(address _burner) external onlyOwner {
-    burners[_burner] = false;
+function burn(uint256 _amount) public whenNotPaused `onlyBurner` {
+    _burn(msg.sender, _amount);
 }
 
 ```
