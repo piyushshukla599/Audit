@@ -1,0 +1,164 @@
+# Introduction
+
+A smart contract security review of the **Upgradeable AxirToken contract**  was done by **Piyush shukla**, with a focus on the security aspects of the application's smart contracts implementation.
+
+# Disclaimer
+
+A smart contract security review can never verify the complete absence of vulnerabilities. This is a time, resource and expertise bound effort where I try to find as many vulnerabilities as possible. I can not guarantee 100% security after the review or even if the review will find any problems with your smart contracts. Subsequent security reviews, bug bounty programs and on-chain monitoring are strongly recommended.
+
+# About **Auditor**
+
+Piyush shukla,is an independent smart contract security researcher. Having found numerous security vulnerabilities in various protocols, he does his best to contribute to the blockchain ecosystem and its protocols by putting time and effort into security research & reviews. Curretly he's Secured to 3 Hacker Rank globally in Smart Contract Security Platform) or reach out on Twitter [Piyushshukla__](https://www.linkedin.com/in/piyush-shukla-44b7a11b1/)
+
+# About **ProtocolName**
+
+_explanation what the protocol does, some architectural comments, technical documentation_
+
+## Observations
+
+
+# Severity classification
+
+| Severity               | Impact: High | Impact: Medium | Impact: Low |
+| ---------------------- | ------------ | -------------- | ----------- |
+| **Likelihood: High**   | Critical     | High           | Medium      |
+| **Likelihood: Medium** | High         | Medium         | Low         |
+| **Likelihood: Low**    | Medium       | Low            | Low         |
+
+**Impact** - the technical, economic and reputation damage of a successful attack
+
+**Likelihood** - the chance that a particular vulnerability gets discovered and exploited
+
+**Severity** - the overall criticality of the risk
+
+# Security Assessment Summary
+
+**_review commit hash_ - Upgradeable AxirToken**
+
+**_fixes review commit hash_ - [](github.com)**
+
+### Scope
+
+The following smart contracts were in scope of the audit:
+
+- `UpgradeableAxirToken`
+
+
+---
+
+# Findings Summary
+
+| ID     | Title                      | Severity | Status |
+| ------ | -----------------------    | -------- | ------ |
+| [H-01] | Centralization Risk : If owner Account was compromised .then all function are useless                          | High      | Pending  |
+| [M-01] | whenNotPaused modifier always be first modifier    | Medium      | Pending   |
+| [L-01] | Unused library should be remove     | low      | Pending  |
+
+# Detailed Findings
+
+
+## [H-01]Centralization Risk : If owner Account is compromised then it make huge disaster to contract
+
+Smart contract lies in the fact that only the contract owner (the entity that deployed the contract) has the authority to mint and burn tokens. This means that the owner has full control over the token supply and can manipulate it at will. Which make more centralized this contract, if anypoint owner loose the control , or malicious owner takeover the control of owner. it is big disaster to contract
+
+
+### Mitigation
+
+To mitigate this centralization issue, the contract could implement a multi-role approach. Instead of having only the contract owner perform minting and burning, the contract could define multiple roles with specific permissions. For example, separate roles for minting and burning could be created, and these roles could be assigned to different addresses. This way, the power to create and destroy tokens is distributed among different entities, reducing the risk of abuse by a single party.
+
+
+#### Add this code in you contract
+```
+mapping(address => bool) public minters;
+mapping(address => bool) public burners;
+```
+Modify the `initialize` function to assign roles
+
+```
+function initialize(string memory _name, string memory _symbol, address _treasuryContract, uint256 _maxTokenSupply) public initializer {
+    // ... (existing code)
+
+    // Assign minting and burning roles to the treasury contract
+    minters[_treasuryContract] = true;
+    burners[_treasuryContract] = true;
+}
+```
+
+ Implement functions to manage roles:
+```
+ `modifier onlyMinter() {
+    require(minters[msg.sender], "Not a minter");
+    _;
+}
+
+modifier onlyBurner() {
+    require(burners[msg.sender], "Not a burner");
+    _;
+}
+
+function addMinter(address _minter) external onlyOwner {
+    minters[_minter] = true;
+}
+
+function addBurner(address _burner) external onlyOwner {
+    burners[_burner] = true;
+}
+
+function removeMinter(address _minter) external onlyOwner {
+    minters[_minter] = false;
+}
+
+function removeBurner(address _burner) external onlyOwner {
+    burners[_burner] = false;
+}
+
+```
+By implementing these changes, you distribute the authority to mint and burn tokens among different addresses with specific roles, reducing the centralization risk and increasing the overall decentralization of the token system.
+
+## Severity
+High
+
+## Status
+Pending
+
+## [M-01]  whenNotPaused modifier always be first modifier
+
+Always whenNotPaused modifier to implement before any other modifier
+
+correct the code in every function
+
+Use this 
+```
+function setTreasury(address _treasury) external whenNotPaused onlyOwner  {
+       require(_treasury != address(0), "Invalid treasury address");
+       treasuryContract = _treasury;
+       emit TreasuryChanged(_treasury);
+   }
+```
+ instead
+```
+function setTreasury(address _treasury) external onlyOwner whenNotPaused  {
+       require(_treasury != address(0), "Invalid treasury address");
+       treasuryContract = _treasury;
+       emit TreasuryChanged(_treasury);
+   }
+```
+## Severity
+Medium
+
+## Status
+Pending
+
+## [L-01] Unused library should be remove
+
+Remove Unused library 
+
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
+
+
+## Severity
+Low
+
+## Status
+Pending
+
