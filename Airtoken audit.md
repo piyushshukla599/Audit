@@ -55,7 +55,9 @@ The following smart contracts were in scope of the audit:
 | ------ | -----------------------    | -------- | ------ |
 | [H-01] | Centralization Risk : If owner Account was compromised .then all function are useless                          | High      | Pending  |
 | [M-01] | whenNotPaused modifier always be first modifier    | Medium      | Pending   |
+| [M-02] | Missing zero check in recipient address   | Medium      | Pending   |
 | [L-01] | Unused library should be remove     | low      | Pending  |
+| [I-01] | Recommended to use Safemath library     | informative      | Pending  |
 
 # Detailed Findings
 
@@ -133,6 +135,15 @@ Medium
 ## Status
 Pending
 
+## [M-01] Missing zero check in recipient
+
+in _transfer function there is not check recipient address . if mistakly sender send funds in zer address then all funds will be loss
+
+add this 
+
+   ` require(recipient != address(0), "Invalid recipient address"); // Check for valid recipient `
+
+
 ## [L-01] Unused library should be remove
 
 Remove Unused library 
@@ -146,3 +157,7 @@ Low
 ## Status
 Pending
 
+
+### Informative
+
+Recommended to use Safemath library to avoid any calculation issue which lead overflow or underflow  risk
