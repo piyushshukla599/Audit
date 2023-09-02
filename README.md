@@ -19,14 +19,15 @@ My name is Piyush shukla, and I am an independent blockchain security researcher
 ### Bug bounties
 | Project | Severity | Security Report | Payout | Status |
 |:--:|:--:|:--:|:--:|:--:|
-| - | - | - | - | - |
+| 80+ | H/M | - | - | Fixed |
 
 # Hackenproof <img src="https://hackenproof.com/assets/cup/logo-cup-372c14b88c255d9567c39787551f64265cc43c895699b542bb07ba73c8aa30dd.svg" width=100 height=25>
-
+[Piyush Shukla](https://hackenproof.com/hackers/bugtester/)
 ### Bug bounties
 | Project | Severity | Leaderboard | Payout | Status |
 |:--:|:--:|:--:|:--:|:--:|
-| 66 | High | Top 3 | - | Fixed |
+| 72 | High | Top 3 | 3 | Fixed |
+
 
 
 # Immunefi <img src="https://immunefi.com/images/logo-white.svg" width=100 height=25>
@@ -49,8 +50,12 @@ My name is Piyush shukla, and I am an independent blockchain security researcher
 ### Audit Competitions
 | Contest | High risk | Medium risk | Security report | Leaderboard | Payout | Language |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| [Stader](https://code4rena.com/contests/2023-06-stader-labs#top) | - | - | - | - | - | Solidity |
-|
+| [Stader](https://code4rena.com/contests/2023-06-stader-labs#top) | - | 2 | - | - | - | Solidity |
+| [PoolTogether V5: Part Deux](https://code4rena.com/contests/2023-08-pooltogether-v5-part-deux#top)) | - | 2 | - | - | - | Solidity |
+| [Goodentrylabs](https://code4rena.com/contests/2023-08-good-entry#top) | - | - | - | - | - | Solidity |
+| [Verwa](https://code4rena.com/contests/2023-08-verwa#top) | - |  | - | - | - | Solidity |
+| [Amphora](https://code4rena.com/contests/2023-07-amphora-protocol#top) | - | 1 | - | - | - | Solidity |
+| [CantoPublic](https://code4rena.com/contests/2023-06-canto#top) | - | 2 | - | - | - | Solidity |
 
 # CodeHawks <img src="https://res.cloudinary.com/droqoz7lg/image/upload/v1689080263/snhkgvtsidryjdtx0pce.png" width=50 height=27>
 
