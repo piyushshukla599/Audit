@@ -7,7 +7,7 @@ My name is Piyush shukla, and I am an independent blockchain security researcher
 
 | Overall issues found | High risk | Unique highs | Medium risk | Unique mediums | Audited contests |
 |:--:|:--:|:--:|:--:|:--:|:--:|
-| 25 issues found | 17 highs | - | 8 mediums | - | 6 contests |
+| 6 issues found | - | - | 5 mediums | - | 5 contests |
 
 # Piyush's monthly tracking 
 ### 22 June, 2023 - 22 July, 2023 
