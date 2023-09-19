@@ -53,8 +53,8 @@ The following smart contracts were in scope of the audit:
 
 | ID     | Title                      | Severity | Status |
 | ------ | -----------------------    | -------- | ------ |
-| [H-01] |Use safeTransferFrom and safeTransfer instead of TransferFrom and Transfer    | High      | Pending  |
-| [H-02] |Missing maximum limit check in the newFees   | High      | Pending   |
+| [H-01] |Use safeTransferFrom and safeTransfer instead of TransferFrom and Transfer    | High      | Fixed  |
+| [H-02] |Missing maximum limit check in the newFees   | High      | Fixed   |
 
 # Detailed Findings
 
@@ -72,7 +72,7 @@ use OpenZeppelin’s SafeERC20 , And use `safeTransferFrom` and `safeTransfer` i
 High
 
 ## Status
-Pending
+Fixed
 
 ## [H-02]  Missing maximum limit check in the newFees
 
@@ -96,4 +96,4 @@ Add `maxfees` limit in code
 High
 
 ## Status
-Pending
+Fixed
