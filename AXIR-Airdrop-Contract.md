@@ -52,8 +52,8 @@ The following smart contracts were in scope of the audit:
 
 | ID     | Title                      | Severity | Status |
 | ------ | -----------------------    | -------- | ------ |
-| [H-01] | LACK OF DISABLEINITIALIZERS | High      | Fixed  |
-| [H-02] | incorrect Modifier in emergencyWithdraw Function   | High      | Fixed   |
+| [H-01] | incorrect Modifier in emergencyWithdraw Function   | High      | Fixed   |
+| [M-01] | LACK OF DISABLEINITIALIZERS | Medium      | Acknowledge  |
 | [G-01] | use ++i instead i++ | low  | Fixed  |
 | [G-02] | There is no need to initialize `i` to its default value | low      | Fixed  |
 
@@ -63,23 +63,7 @@ The following smart contracts were in scope of the audit:
 # Detailed Findings
 
 
-## [H-01]LACK OF DISABLEINITIALIZERS
-
-Attcaker can  re-initailize the function you must be add _disableInitializers()
-
-### Mitigation
-
-constructor() {
-        _disableInitializers();
-    }
-
-## Severity
-High
-
-## Status
-Pending
-
-## [H-02]  incorrect Modifier in emergencyWithdraw Function 
+## [H-01]  incorrect Modifier in emergencyWithdraw Function 
 
 Airdrop contract, there is a discrepancy in the modifier used for the emergencyWithdraw function. The modifier used is whenNotPaused, which allows the function to be executed when the contract is not paused. However, the function is intended to be used for emergency withdrawals when contract is paused , or you should be allowed even when the contract is paused and not paused 
 
@@ -94,7 +78,23 @@ Remove both modifier
 High
 
 ## Status
-Pending
+Fixed
+
+## [M-01]LACK OF DISABLEINITIALIZERS
+
+Attcaker can  re-initailize the function you must be add _disableInitializers()
+
+### Mitigation
+
+constructor() {
+        _disableInitializers();
+    }
+
+## Severity
+Medium
+
+## Status
+Acknowledge
 
 ## [G-01] use ++i instead i++ in function airdropToken loop
 
@@ -103,7 +103,7 @@ use ++i instead i++ //
 low
 
 ## Status
-Pending
+Fixed
 
 ## [G-02] There is no need to initialize `i` to its default value in function airdropToken loop
 
@@ -114,7 +114,7 @@ low
 
 
 ## Status
-Pending
+Fixed
 
 
 Powered by Safe Edges
